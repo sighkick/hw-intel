@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homework Intel — Drones that see, decide, and act.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body data-screen-label="Homework Intel — Homepage">
+
+<!-- =============== NAV =============== -->
+<nav class="nav">
+  <a href="#top" class="lockup">
+    <span class="mark"></span>
+    <span class="word">Homework Intel</span>
+  </a>
+  <div class="nav-links">
+    <a href="#platform">Platform</a>
+    <a href="#fleet">Fleet</a>
+    <a href="#exploded">Exploded</a>
+    <a href="#defense">Defense</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Request brief</a>
+</nav>
+
+<!-- =============== HERO =============== -->
+<section class="hero" id="top" data-screen-label="Hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+
+  <span class="corner-tag tl">HWK-AG1 / QUAD · REV 04</span>
+  <span class="corner-tag tr">N 28°35'12" · E 77°12'07"</span>
+  <span class="corner-tag bl">CONFIDENTIAL · 2026</span>
+  <span class="corner-tag br">PLATFORM SCHEMATIC</span>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span class="pulse"></span> India · Agri · Defense · Space</div>
+    <h1>
+      <span class="word-stack"><span>Drones that see,</span></span>
+      <span class="word-stack"><span>decide,</span></span>
+      <span class="word-stack"><span>and <span class="acc">act.</span></span></span>
+    </h1>
+    <p class="sub">An integrated agricultural drone platform built in India — closed-loop hardware, software and AI engineered to cut chemical use by up to 90% while raising yield. Extending into defense and space.</p>
+
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">Contact us <span>→</span></a>
+      <a href="#platform" class="btn-secondary">See the platform</a>
+    </div>
+
+    <div class="hero-chips">
+      <span class="chip"><strong>1 acre</strong> in 7–8 min</span>
+      <span class="chip"><strong>40–60 L</strong> water / acre</span>
+      <span class="chip"><strong>8 patents</strong> filed</span>
+      <span class="chip"><strong>12%</strong> yield lift</span>
+    </div>
+  </div>
+
+  <div class="hero-stage" id="hero-stage">
+    <span class="stage-corner tl"><span class="tick"></span>FRAME · 01</span>
+    <span class="stage-corner tr">CH-01 / 04<span class="tick"></span></span>
+    <span class="stage-corner bl"><span class="tick"></span>REC 00:01:42</span>
+    <span class="stage-corner br">SCALE 1:6<span class="tick"></span></span>
+
+    <div class="drone-scene" id="drone-scene">
+      <div class="drone-orbits">
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring r2 spinning"></div>
+        <div class="orbit-ring r3"></div>
+      </div>
+
+      <div class="drone-craft spinning-y" id="drone-craft">
+        <div class="drone-img-wrap" id="drone-img-wrap">
+          <img src="assets/drone-heavy-quad.png" alt="HWK-AG1 agricultural drone" id="drone-main">
+          <div class="rotor-disk tl"></div>
+          <div class="rotor-disk tr"></div>
+          <div class="rotor-disk bl"></div>
+          <div class="rotor-disk br"></div>
+        </div>
+      </div>
+
+      <div class="hud-callout hud-1">
+        <span class="code">SPC · 01</span>
+        <span class="line"></span>
+      </div>
+      <div class="hud-callout hud-2 right">
+        <span class="code">RTR · 02</span>
+        <span class="line"></span>
+      </div>
+      <div class="hud-callout hud-3">
+        <span class="code">NZL · 04</span>
+        <span class="line"></span>
+      </div>
+      <div class="hud-callout hud-4 right">
+        <span class="code">TNK · 05</span>
+        <span class="line"></span>
+      </div>
+    </div>
+
+    <div class="stage-readout">
+      <span>ROT <strong id="readout-rot">000°</strong></span>
+      <span>ALT 4.2 M</span>
+      <span>FPS 60</span>
+      <span>MODEL <strong>HWK-AG1</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- =============== MARQUEE =============== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>
+      Drones that see, decide, and act
+      <span class="sep">◇</span>
+      Built in India · flown everywhere
+      <span class="sep">◇</span>
+      Up to 90% less chemical
+      <span class="sep">◇</span>
+      Closed-loop precision agriculture
+      <span class="sep">◇</span>
+      Extending into defense &amp; space
+      <span class="sep">◇</span>
+      8 patentable technologies
+      <span class="sep">◇</span>
+    </span>
+    <span>
+      Drones that see, decide, and act
+      <span class="sep">◇</span>
+      Built in India · flown everywhere
+      <span class="sep">◇</span>
+      Up to 90% less chemical
+      <span class="sep">◇</span>
+      Closed-loop precision agriculture
+      <span class="sep">◇</span>
+      Extending into defense &amp; space
+      <span class="sep">◇</span>
+      8 patentable technologies
+      <span class="sep">◇</span>
+    </span>
+  </div>
+</div>
+
+<!-- =============== MARKET / OPPORTUNITY =============== -->
+<section class="s" id="market" data-screen-label="Opportunity">
+  <div class="section-head">
+    <div class="section-num">01 / Opportunity</div>
+    <h2 class="reveal">The Indian drone market is at an inflection. <span class="dim">We sit in the highest-growth lane.</span></h2>
+  </div>
+
+  <div class="stat-grid reveal">
+    <div class="stat-card feature">
+      <div class="label">MFG. POTENTIAL · 2030</div>
+      <div class="num" data-count="41000">0<span class="unit">₹ Cr</span></div>
+      <div class="desc">Indian drone manufacturing potential by 2030 — across agri, defense, logistics and survey.</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">AGRICULTURE</div>
+      <div class="num" data-count="8800">0<span class="unit">₹ Cr</span></div>
+      <div class="desc">Agriculture share growing at 25–30% CAGR. Women-SHG channel is subsidized, organized, underserved.</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">DEFENCE &amp; HOMELAND</div>
+      <div class="num" data-count="23000">0<span class="unit">₹ Cr</span></div>
+      <div class="desc">Procurement scaling at 20–25% CAGR post-2020. Border ISR, loitering, and resupply lead.</div>
+    </div>
+  </div>
+  <div class="source-line">SOURCE · FICCI–EY · "MAKING INDIA THE DRONE HUB OF THE WORLD" · 2022</div>
+</section>
+
+<!-- =============== PLATFORM / STACK =============== -->
+<section class="s" id="platform" data-screen-label="Platform">
+  <div class="section-head">
+    <div class="section-num">02 / Platform</div>
+    <h2 class="reveal">An integrated agri-drone platform — <span class="acc">hardware, software and AI as one closed loop.</span></h2>
+  </div>
+
+  <div class="stack-wrap">
+    <div class="stack-3d reveal">
+      <span class="corner-tag tl">STACK · L01–L04</span>
+      <span class="corner-tag tr">PERSPECTIVE</span>
+      <span class="corner-tag bl">CLOSED LOOP</span>
+      <span class="corner-tag br">VIEW · ISO</span>
+      <div class="stack-scene" id="stack-scene">
+        <div class="layer-plate active" data-layer="0" style="transform: translateZ(120px);">
+          <span class="corner-mark tl"></span><span class="corner-mark tr"></span>
+          <span class="corner-mark bl"></span><span class="corner-mark br"></span>
+          <span class="code">L · 01 — AI</span>
+          <span class="name">AI Decision Layer</span>
+          <span class="sub">Spectral pipeline · variable-rate logic</span>
+        </div>
+        <div class="layer-plate" data-layer="1" style="transform: translateZ(40px);">
+          <span class="code">L · 02 — CONTROL</span>
+          <span class="name">Control Layer</span>
+          <span class="sub">Tank-integrated flight controller</span>
+        </div>
+        <div class="layer-plate" data-layer="2" style="transform: translateZ(-40px);">
+          <span class="code">L · 03 — DELIVERY</span>
+          <span class="name">Delivery Layer</span>
+          <span class="sub">Custom nozzle · spray hardware</span>
+        </div>
+        <div class="layer-plate" data-layer="3" style="transform: translateZ(-120px);">
+          <span class="code">L · 04 — FIELD</span>
+          <span class="name">Crop · Field</span>
+          <span class="sub">Real-world feedback loop</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-list" id="stack-list">
+      <div class="stack-item active" data-layer="0">
+        <div class="item-code">C · 01</div>
+        <div class="item-body">
+          <div class="item-name">Spectral Camera</div>
+          <div class="item-desc">Multispectral imaging for real-time crop health and stress detection.</div>
+        </div>
+        <div class="item-arrow">→</div>
+      </div>
+      <div class="stack-item" data-layer="0">
+        <div class="item-code">C · 02</div>
+        <div class="item-body">
+          <div class="item-name">Edge AI Module</div>
+          <div class="item-desc">On-board inference — no cloud dependency, works in low-connectivity fields.</div>
+        </div>
+        <div class="item-arrow">→</div>
+      </div>
+      <div class="stack-item" data-layer="1">
+        <div class="item-code">C · 03</div>
+        <div class="item-body">
+          <div class="item-name">Integrated Flight Controller</div>
+          <div class="item-desc">Tank, pump, nozzle, and battery telemetry fused into one control loop.</div>
+        </div>
+        <div class="item-arrow">→</div>
+      </div>
+      <div class="stack-item" data-layer="2">
+        <div class="item-code">C · 04</div>
+        <div class="item-body">
+          <div class="item-name">Custom Spray System</div>
+          <div class="item-desc">Variable-rate nozzles with anti-drift droplet control.</div>
+        </div>
+        <div class="item-arrow">→</div>
+      </div>
+      <div class="stack-item" data-layer="1">
+        <div class="item-code">C · 05</div>
+        <div class="item-body">
+          <div class="item-name">Operator App</div>
+          <div class="item-desc">Single-tap mission planning in local languages, SMS-fallback for low signal.</div>
+        </div>
+        <div class="item-arrow">→</div>
+      </div>
+      <div class="stack-item" data-layer="3">
+        <div class="item-code">C · 06</div>
+        <div class="item-body">
+          <div class="item-name">Modular Airframe</div>
+          <div class="item-desc">Quick-swap payload mount; extensible to defense and survey configurations.</div>
+        </div>
+        <div class="item-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== COST COMPARISON =============== -->
+<section class="s" id="compare" data-screen-label="Cost Comparison">
+  <div class="section-head">
+    <div class="section-num">03 / Economics</div>
+    <h2 class="reveal">Manual vs Tractor vs Drone. <span class="dim">On total cost, precision wins.</span></h2>
+  </div>
+
+  <div class="compare reveal">
+    <div class="compare-row head">
+      <div></div>
+      <div>Manual Knapsack</div>
+      <div>Tractor Boom</div>
+      <div class="ours">Precision Drone · OURS</div>
+    </div>
+    <div class="compare-row">
+      <div class="label" data-l="Metric">Cost / acre</div>
+      <div>₹500–1,200</div>
+      <div>Low labour, high capex + diesel</div>
+      <div class="ours">₹300–700 service</div>
+    </div>
+    <div class="compare-row">
+      <div class="label" data-l="Metric">Speed</div>
+      <div>Few acres / day</div>
+      <div>Moderate</div>
+      <div class="ours"><strong>1 acre in 7–8 min</strong> · 30–50 acres / day</div>
+    </div>
+    <div class="compare-row">
+      <div class="label" data-l="Metric">Chemical use</div>
+      <div>High · blanket</div>
+      <div>High · blanket</div>
+      <div class="ours">Up to <strong>~90% less</strong> via variable-rate</div>
+    </div>
+    <div class="compare-row">
+      <div class="label" data-l="Metric">Crop impact</div>
+      <div>Trampling</div>
+      <div>Wheel-track + compaction</div>
+      <div class="ours">No physical contact</div>
+    </div>
+    <div class="compare-row">
+      <div class="label" data-l="Metric">Accessibility</div>
+      <div>Slow, labour-heavy</div>
+      <div>Cannot enter wet/tall crops</div>
+      <div class="ours">Flies over any terrain</div>
+    </div>
+    <div class="compare-row">
+      <div class="label" data-l="Metric">Data</div>
+      <div>None</div>
+      <div>None</div>
+      <div class="ours"><strong>Maps · logs · prescriptions</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EXPLODED VIEW =============== -->
+<section class="s exploded-section" id="exploded" data-screen-label="Exploded View">
+  <div class="section-head">
+    <div class="section-num">04 / Anatomy</div>
+    <h2 class="reveal">Pull the airframe apart. <span class="dim">Eight patentable systems, one closed loop.</span></h2>
+  </div>
+
+  <div class="exploded-progress">
+    <div class="pp-track"><div class="pp-fill" id="ex-fill"></div></div>
+    <div class="pp-label mono">SCROLL · EXPLODE / REASSEMBLE</div>
+  </div>
+
+  <div class="exploded-wrap" id="exploded-wrap">
+    <div class="exploded-stage" id="exploded-stage">
+      <span class="corner-tag tl">HWK-AG1 · EXPLODED</span>
+      <span class="corner-tag tr">VIEW · ISO</span>
+      <span class="corner-tag bl">8 SYSTEMS</span>
+      <span class="corner-tag br">REV 04</span>
+
+      <div class="exp-ring" id="exp-ring"></div>
+      <div class="exp-ring r2"></div>
+      <div class="exp-ring r3"></div>
+
+      <div class="exp-center" id="exp-center">
+        <img src="assets/drone-heavy-quad.png" alt="Drone exploded view" id="exp-drone">
+      </div>
+
+      <!-- 8 callouts arranged around the drone -->
+      <div class="exp-callout" data-deg="-135" data-r="380">
+        <div class="exp-code">SYS · 01</div>
+        <div class="exp-name">Spectral Camera</div>
+        <div class="exp-meta">Multispectral · 5 + RGB</div>
+      </div>
+      <div class="exp-callout" data-deg="-100" data-r="400">
+        <div class="exp-code">SYS · 02</div>
+        <div class="exp-name">Edge AI Module</div>
+        <div class="exp-meta">On-board inference</div>
+      </div>
+      <div class="exp-callout" data-deg="-55" data-r="380">
+        <div class="exp-code">SYS · 03</div>
+        <div class="exp-name">Flight Controller</div>
+        <div class="exp-meta">Tank-integrated · closed-loop</div>
+      </div>
+      <div class="exp-callout" data-deg="-20" data-r="400">
+        <div class="exp-code">SYS · 04</div>
+        <div class="exp-name">Rotor · R-01</div>
+        <div class="exp-meta">21-inch carbon · 6800 rpm</div>
+      </div>
+      <div class="exp-callout" data-deg="20" data-r="400">
+        <div class="exp-code">SYS · 05</div>
+        <div class="exp-name">Spray Nozzle</div>
+        <div class="exp-meta">PWM · variable-rate · low-drift</div>
+      </div>
+      <div class="exp-callout" data-deg="55" data-r="380">
+        <div class="exp-code">SYS · 06</div>
+        <div class="exp-name">Tank · 20 L</div>
+        <div class="exp-meta">Liquid + dry payload</div>
+      </div>
+      <div class="exp-callout" data-deg="100" data-r="400">
+        <div class="exp-code">SYS · 07</div>
+        <div class="exp-name">Battery Pack</div>
+        <div class="exp-meta">Hot-swap · 28 V · 30 Ah</div>
+      </div>
+      <div class="exp-callout" data-deg="135" data-r="380">
+        <div class="exp-code">SYS · 08</div>
+        <div class="exp-name">Comms · GNSS</div>
+        <div class="exp-meta">RTK · LTE · SMS-fallback</div>
+      </div>
+
+      <!-- HUD readout -->
+      <div class="exp-readout">
+        <span>FRAME <strong id="exp-frame">000</strong>/240</span>
+        <span>SEP <strong id="exp-sep">0</strong>%</span>
+        <span>SYS 08 / 08</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FLEET — drone product grid =============== -->
+<section class="s" id="fleet" data-screen-label="Fleet">
+  <div class="section-head">
+    <div class="section-num">05 / Fleet</div>
+    <h2 class="reveal">One platform. <span class="acc">Six purpose-built airframes.</span></h2>
+  </div>
+
+  <div class="fleet-grid reveal" id="fleet-grid">
+    <div class="fleet-card" data-tilt>
+      <div class="fc-code"><span>HWK · 01 — AG · HEAVY QUAD</span><span class="role agri">AGRI</span></div>
+      <div class="fc-name">HWK-AG1 / Q4</div>
+      <div class="fc-domain">PRECISION SPRAY · 4-ROTOR</div>
+      <div class="fc-corner"></div>
+      <div class="fc-imgwrap"><img src="assets/drone-heavy-quad.png" alt="Heavy quad drone"></div>
+      <div class="fc-specs">
+        <div><div class="spec-k">MTOW</div><div class="spec-v">38 kg</div></div>
+        <div><div class="spec-k">Tank</div><div class="spec-v">20 L</div></div>
+        <div><div class="spec-k">Coverage</div><div class="spec-v">12 acre/hr</div></div>
+        <div><div class="spec-k">Span</div><div class="spec-v">2.1 m</div></div>
+      </div>
+    </div>
+
+    <div class="fleet-card" data-tilt>
+      <div class="fc-code"><span>HWK · 02 — AG · OCTO</span><span class="role agri">AGRI</span></div>
+      <div class="fc-name">HWK-AG2 / O8</div>
+      <div class="fc-domain">HEAVY-LIFT SPRAY · 8-ROTOR</div>
+      <div class="fc-corner"></div>
+      <div class="fc-imgwrap"><img src="assets/drone-octo-spray.png" alt="Octo spray drone"></div>
+      <div class="fc-specs">
+        <div><div class="spec-k">MTOW</div><div class="spec-v">52 kg</div></div>
+        <div><div class="spec-k">Tank</div><div class="spec-v">40 L</div></div>
+        <div><div class="spec-k">Coverage</div><div class="spec-v">18 acre/hr</div></div>
+        <div><div class="spec-k">Span</div><div class="spec-v">2.8 m</div></div>
+      </div>
+    </div>
+
+    <div class="fleet-card" data-tilt>
+      <div class="fc-code"><span>HWK · 03 — SURVEY</span><span class="role agri">SURVEY</span></div>
+      <div class="fc-name">HWK-MAP / Q</div>
+      <div class="fc-domain">FOLDABLE MULTISPECTRAL MAPPER</div>
+      <div class="fc-corner"></div>
+      <div class="fc-imgwrap"><img src="assets/drone-multispectral.png" alt="Multispectral mapper"></div>
+      <div class="fc-specs">
+        <div><div class="spec-k">MTOW</div><div class="spec-v">2.4 kg</div></div>
+        <div><div class="spec-k">Endurance</div><div class="spec-v">42 min</div></div>
+        <div><div class="spec-k">Bands</div><div class="spec-v">5 + RGB</div></div>
+        <div><div class="spec-k">GSD</div><div class="spec-v">1.2 cm</div></div>
+      </div>
+    </div>
+
+    <div class="fleet-card" data-tilt>
+      <div class="fc-code"><span>HWK · 04 — RECON</span><span class="role def">DEFENSE</span></div>
+      <div class="fc-name">HWK-R / 4</div>
+      <div class="fc-domain">RUGGED RECONNAISSANCE QUAD</div>
+      <div class="fc-corner"></div>
+      <div class="fc-imgwrap"><img src="assets/drone-recon-quad.png" alt="Recon quad"></div>
+      <div class="fc-specs">
+        <div><div class="spec-k">MTOW</div><div class="spec-v">1.9 kg</div></div>
+        <div><div class="spec-k">Range</div><div class="spec-v">12 km</div></div>
+        <div><div class="spec-k">Endurance</div><div class="spec-v">38 min</div></div>
+        <div><div class="spec-k">Sensor</div><div class="spec-v">EO/IR</div></div>
+      </div>
+    </div>
+
+    <div class="fleet-card" data-tilt>
+      <div class="fc-code"><span>HWK · 05 — LOITER</span><span class="role def">DEFENSE</span></div>
+      <div class="fc-name">HWK-L / 1</div>
+      <div class="fc-domain">TUBE-LAUNCH LOITERING MUNITION</div>
+      <div class="fc-corner"></div>
+      <div class="fc-imgwrap"><img src="assets/drone-loitering.png" alt="Loitering drone"></div>
+      <div class="fc-specs">
+        <div><div class="spec-k">MTOW</div><div class="spec-v">5.6 kg</div></div>
+        <div><div class="spec-k">Loiter</div><div class="spec-v">45 min</div></div>
+        <div><div class="spec-k">Range</div><div class="spec-v">40 km</div></div>
+        <div><div class="spec-k">Launch</div><div class="spec-v">Tube</div></div>
+      </div>
+    </div>
+
+    <div class="fleet-card" data-tilt>
+      <div class="fc-code"><span>HWK · 06 — VTOL</span><span class="role def">LOGISTICS</span></div>
+      <div class="fc-name">HWK-V / 1</div>
+      <div class="fc-domain">DUCTED-FAN VTOL · RESUPPLY</div>
+      <div class="fc-corner"></div>
+      <div class="fc-imgwrap"><img src="assets/drone-vtol.png" alt="VTOL drone"></div>
+      <div class="fc-specs">
+        <div><div class="spec-k">MTOW</div><div class="spec-v">9.2 kg</div></div>
+        <div><div class="spec-k">Payload</div><div class="spec-v">3.5 kg</div></div>
+        <div><div class="spec-k">Range</div><div class="spec-v">28 km</div></div>
+        <div><div class="spec-k">Cruise</div><div class="spec-v">22 m/s</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== BEYOND AGRICULTURE =============== -->
+<section class="s beyond" id="defense" data-screen-label="Beyond Agriculture">
+  <div class="section-head">
+    <div class="section-num">06 / Beyond Agriculture</div>
+    <h2 class="reveal">The same platform. <span class="acc">Three new verticals.</span></h2>
+  </div>
+  <p class="dim reveal" style="font-size:18px; max-width:800px; margin-top:-40px; margin-bottom:60px;">
+    Our airframe, control stack and AI pipeline are vertical-agnostic. Defense and space are not pivots — they are extensions.
+  </p>
+
+  <div class="vert-grid reveal">
+    <div class="vert-card">
+      <div class="v-code">VERTICAL · 01</div>
+      <h3>Tactical ISR Micro-Drones</h3>
+      <div class="v-domain">BORDER SURVEILLANCE · RECONNAISSANCE</div>
+      <div class="v-img"><img src="assets/drone-tactical-fw.png" alt="Tactical fixed-wing UAV"></div>
+      <p class="v-desc">Sub-2 kg airframes for short-range surveillance, leveraging our spectral imaging + edge AI stack. Target: state police and paramilitary contracts.</p>
+    </div>
+    <div class="vert-card">
+      <div class="v-code">VERTICAL · 02</div>
+      <h3>Loitering Munitions</h3>
+      <div class="v-domain">PRECISION TACTICAL PLATFORMS</div>
+      <div class="v-img"><img src="assets/drone-loitering.png" alt="Loitering munition"></div>
+      <p class="v-desc">Modular tactical drone platform — post-Ukraine, the highest-growth defense category globally. Our airframe + autonomous control IP applies directly.</p>
+    </div>
+    <div class="vert-card">
+      <div class="v-code">VERTICAL · 03</div>
+      <h3>Logistics Resupply</h3>
+      <div class="v-domain">FORWARD OPERATING BASE DELIVERY</div>
+      <div class="v-img"><img src="assets/drone-fixedwing-mil.png" alt="Fixed-wing logistics UAV"></div>
+      <p class="v-desc">Heavy-lift variant for tactical resupply, medical logistics, and remote-area delivery. India's high-altitude border posts are the anchor use case.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CONTACT =============== -->
+<section class="s contact" id="contact" data-screen-label="Contact">
+  <div class="contact-grid">
+    <div>
+      <div class="section-num" style="margin-bottom:32px;">07 / Contact</div>
+      <h2>Let's talk.</h2>
+      <p class="lead">Strategic partnership, technical deep-dive, or MVP demonstration — available on request under NDA. We respond within 48 hours.</p>
+
+      <div class="contact-meta">
+        <div class="meta-block">
+          <div class="k">Press inquiries</div>
+          <div class="v">press@homeworkintel.com</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Partnerships</div>
+          <div class="v">partners@homeworkintel.com</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">HQ</div>
+          <div class="v">Bengaluru · India</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Field ops</div>
+          <div class="v">Punjab · Maharashtra · TN</div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); this.querySelector('.btn-primary').innerHTML='Sent · We\\'ll be in touch →'; this.querySelector('.btn-primary').style.background='#1a8855'; this.querySelector('.btn-primary').style.borderColor='#1a8855';">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" placeholder="Your name" required>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" placeholder="you@company.com" required>
+      </div>
+      <div class="field">
+        <label>Organisation</label>
+        <input type="text" placeholder="Company or institution">
+      </div>
+      <div class="field">
+        <label>Interest</label>
+        <select>
+          <option>Press inquiry</option>
+          <option>Partnership / licensing</option>
+          <option>Field demonstration</option>
+          <option>Investor brief</option>
+          <option>Career</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Message</label>
+        <textarea rows="3" placeholder="A line or two on what you're after."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Send message <span>→</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer>
+  <div>
+    <div class="ft-mark">
+      <span class="mark"></span>
+      <span class="word">Homework Intel</span>
+    </div>
+    <p class="ft-tag">Drones that see, decide, and act. A novel agricultural drone platform built in India — extending into defense and space.</p>
+  </div>
+  <div class="ft-col">
+    <h4>Platform</h4>
+    <a href="#platform">Closed-loop stack</a>
+    <a href="#fleet">Fleet</a>
+    <a href="#compare">Economics</a>
+  </div>
+  <div class="ft-col">
+    <h4>Verticals</h4>
+    <a href="#defense">Defense</a>
+    <a href="#defense">Logistics</a>
+    <a href="#fleet">Survey &amp; mapping</a>
+  </div>
+  <div class="ft-col">
+    <h4>Company</h4>
+    <a href="#exploded">Exploded view</a>
+    <a href="#contact">Contact</a>
+    <a href="#">Press kit</a>
+  </div>
+
+  <div class="ft-bottom">
+    <span>© 2026 · Homework Intel · Built in India · Flown everywhere</span>
+    <span>HWK-001 · CONFIDENTIAL</span>
+  </div>
+</footer>
+
+<!-- Default tweaks -->
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks-app.jsx"></script>
+<script src="site.js"></script>
+
+</body>
+</html>
